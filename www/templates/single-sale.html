@@ -1,0 +1,23 @@
+<ion-view>
+    <ion-nav-title>Quotation Number: {{sale.name}}</ion-nav-title>
+    <ion-content class="padding">
+        <div class="card">
+            <div class="item item-divider" style="border-bottom:1px solid #ccc">
+                Date: {{sale.create_date}}
+            </div>
+            <div class="list card">
+
+                <ul class="list list-inset">
+                    <li class="item" style="border-bottom:1px solid #ccc"><b>Customer: </b>{{sale.partner_id[1]}}</li>
+                    <li class="item" style="border-bottom:1px solid #ccc"><b>Total: </b>Ksh. {{sale.amount_total}}</li>
+                    <li class="item"style="border-bottom:1px solid #ccc"><b>Status: </b>{{sale.state}}</li>
+                    <li class="item"style="border-bottom:1px solid #ccc"><b>SalesPerson: </b>{{sale.user_id[1]}}</li>
+                </ul>
+
+            </div>
+            <div class="item item-divider">
+                <div style="text-align:center">Quotation<div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

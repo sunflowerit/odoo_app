@@ -1,0 +1,97 @@
+<style type="text/css">
+    .slider-slide-tab  span:last-child{
+        border-radius: 10px;
+        background:#ffffff;
+        padding: 3px 8px;
+        color: #ef473a;
+        position: relative;
+        bottom: 8px;
+        left: 5px;
+        font-weight: bold;
+        box-shadow:0 0 1px #fff;
+    }
+    .item-avatar{
+        padding-right: 10%;
+    }
+</style>
+<ion-view view-title="Contacts">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-android-search" ng-click="ShowHide()"></button>
+        <button class="button button-icon button-clear ion-android-more-vertical"  ng-click="popover.show($event)"></button>
+    </ion-nav-buttons>
+    <ion-content scroll="false" overflow-scroll="true">
+        <ion-slide-box slide-tabs-scrollable="true"  show-pager="false" ion-slide-tabs bar-assertive>
+            <ion-slide ion-slide-tab-label="All Contacts">
+                <ion-view>
+                    <ion-content>
+                        <div ng-show="searchVisible">
+                        <label class="item item-input">
+                            <i class="icon ion-search placeholder-icon"></i>
+                            <input type="search" placeholder="Search Contacts" ng-model="search">
+                        </label>
+                        </div>
+
+                        <ion-refresher
+                                pulling-text="Pull to refresh..."
+                                on-refresh="doRefresh()">
+                        </ion-refresher>
+
+                        <ion-list>
+                        <p ng-show="contacts.length == 0">No records found</p>
+                            <!--<ion-item ng-repeat="contact in contacts" class="item-avatar" ng-click="single_contact(contact.id)">-->
+                        <ion-item auto-list-divider auto-list-divider-value="{{contact.name}}" class="item-avatar" ng-repeat="contact in contacts | orderBy:'name' |filter:search" ng-click="single_contact(contact.id)" style="border-bottom:1px solid #ccc">
+                            <img src="img/tyrion.jpg" />
+                            <p><b>{{contact.name}}</b></p>
+                            <small>{{contact.email}}</small>
+                      </ion-item>
+                    </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Customers">
+                <ion-view>
+                    <ion-content>
+                        <ion-content>
+                            <div ng-show="searchVisible">
+                                <label class="item item-input">
+                                    <i class="icon ion-search placeholder-icon"></i>
+                                    <input type="search" placeholder="Search Customers" ng-model="search">
+                                </label>
+                            </div>
+                            <p ng-show="customers.length == 0">No records found</p>
+                        <ion-list>
+
+                        <ion-item collection-repeat="customer in customers |filter:search" ng-click="single_contact(customer.id)">
+                            <b>{{customer.name}}</b>
+                            <p>{{customer.mobile}}</p>
+                            <small>{{customer.email}}</small>
+                      </ion-item>
+                    </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Suppliers">
+                 <ion-view>
+                    <ion-content>
+                        <ion-content>
+                            <div ng-show="searchVisible">
+                                <label class="item item-input">
+                                    <i class="icon ion-search placeholder-icon"></i>
+                                    <input type="search" placeholder="Search Suppliers" ng-model="search">
+                                </label>
+                            </div>
+                    <p ng-show="suppliers.length == 0">No records found</p>
+                        <ion-list>
+
+                        <ion-item collection-repeat="supplier in suppliers |filter:search" style="border-bottom:1px solid #ccc" ng-click="single_contact(supplier.id)">
+                            <b>{{supplier.name}}</b>
+                            <p>{{supplier.mobile}}</p>
+                            <small>{{supplier.email}}</small>
+                      </ion-item>
+                    </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

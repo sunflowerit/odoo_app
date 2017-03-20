@@ -1,0 +1,76 @@
+<style type="text/css">
+    .slider-slide-tab  span:last-child{
+        border-radius: 10px;
+        background:#ffffff;
+        padding: 3px 8px;
+        color: #ef473a;
+        position: relative;
+        bottom: 8px;
+        left: 5px;
+        font-weight: bold;
+        box-shadow:0 0 1px #fff;
+    }
+</style>
+<ion-view view-title="Accounting">
+    <ion-content scroll="false" overflow-scroll="true">
+        <ion-slide-box slide-tabs-scrollable="true"  show-pager="false" ion-slide-tabs bar-assertive>
+            <ion-slide ion-slide-tab-label="Invoices">
+                <ion-view>
+                    <ion-content>
+                        <p ng-show="invoices.length == 0">No records found</p>
+                        <ion-list>
+                            <ion-item collection-repeat="invoice in invoices" ng-click="single_account(invoice.id)" style="border-bottom:1px solid #ccc">
+                                <b>Number: {{invoice.number}}:</b> <P></P>
+                                <small>Customer: {{invoice.partner_id[1]}}</small>
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label=Refunds>
+                <ion-view>
+                    <ion-content>
+                        <p ng-show="accounting_refunds.length == 0">No records found</p>
+                        <ion-list>
+                            <ion-item collection-repeat="refund in accounting_refunds"  ng-click="single_account(refund.id)" style="border-bottom:1px solid #ccc">
+                                <b>Number: {{refund.number}}:</b> <P></P>
+                                <small>Customer: {{refund.partner_id[1]}}</small>
+
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Receipts">
+                <ion-view>
+                    <ion-content>
+                        <p ng-show="accounting_receipts.length == 0">No records found</p>
+                        <ion-list>
+                            <ion-item collection-repeat="receipt in accounting_receipts" style="border-bottom:1px solid #ccc">
+                                <b>{{receipt.number}}:</b> <small>{{receipt.partner_id[1]}}</small><p></p>
+                                <small>Ksh. {{receipt.amount}}</small><p></p>
+                                <small>{{receipt.journal_id[1]}}</small>
+
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Payments">
+                <ion-view>
+                    <ion-content>
+                        <p ng-show="accounting_payments.length == 0">No records found</p>
+                        <ion-list>
+                            <ion-item collection-repeat="payment in accounting_payments" style="border-bottom:1px solid #ccc">
+                                <b>{{payment.number}}:</b> <small>{{payment.partner_id[1]}}</small><p></p>
+                                <small>Ksh. {{payment.amount}}</small><p></p>
+                                <small>{{payment.journal_id[1]}}</small>
+
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

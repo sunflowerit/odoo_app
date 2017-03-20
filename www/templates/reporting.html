@@ -1,0 +1,25 @@
+<style type="text/css">
+    .slider-slide-tab  span:last-child{
+        border-radius: 10px;
+        background:#ffffff;
+        padding: 3px 8px;
+        color: #ef473a;
+        position: relative;
+        bottom: 8px;
+        left: 5px;
+        font-weight: bold;
+        box-shadow:0 0 1px #fff;
+    }
+</style>
+<ion-view view-title="Reporting">
+    <ion-content scroll="false" overflow-scroll="true">
+        <ion-slide-box slide-tabs-scrollable="true"  show-pager="false" ion-slide-tabs bar-assertive>
+            <ion-slide ion-slide-tab-label="Dashboard">
+                <div ng-include src="'templates/reporting/dashboard.html'"></div>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Sales Analysis">
+                <div ng-include src="'templates/reporting/salesAnalysis.html'"></div>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

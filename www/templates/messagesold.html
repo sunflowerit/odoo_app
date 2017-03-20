@@ -1,0 +1,71 @@
+<style type="text/css">
+    .slider-slide-tab  span:last-child{
+        border-radius: 10px;
+        background:#ffffff;
+        padding: 3px 8px;
+        color: #ef473a;
+        position: relative;
+        bottom: 8px;
+        left: 5px;
+        font-weight: bold;
+        box-shadow:0 0 1px #fff;
+    }
+</style>
+<ion-view view-title="Messages">
+   <ion-content scroll="false" overflow-scroll="true">
+        <ion-slide-box slide-tabs-scrollable="true"  show-pager="false" ion-slide-tabs>
+            <ion-slide ion-slide-tab-label="Inbox <span>2</span>">
+                 <ion-list>
+                     Inbox
+                     <ion-item class="item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}" >
+                         <img ng-src="{{chat.face}}">
+                         <h2>{{chat.name}}</h2>
+                         <p style="color:#ccc;">{{chat.email}}</p>
+                         <i class="icon ion-chevron-right icon-accessory"></i>
+                     </ion-item>
+                 </ion-list>
+             </ion-slide>
+             <ion-slide ion-slide-tab-label="To Me<span>2</span>">
+                 <ion-list>
+                     <ion-item class="item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}" >
+                         <img ng-src="{{chat.face}}">
+                         <h2>{{chat.name}}</h2>
+                         <p style="color:#ccc;">{{chat.email}}</p>
+                         <i class="icon ion-chevron-right icon-accessory"></i>
+                     </ion-item>
+                 </ion-list>
+             </ion-slide>
+
+             <ion-slide ion-slide-tab-label="To do">
+                 <ion-list>
+                     <ion-item class="item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}" >
+                         <img ng-src="{{chat.face}}">
+                         <h2>{{chat.name}}</h2>
+                         <p style="color:#ccc;">{{chat.email}}</p>
+                         <i class="icon ion-chevron-right icon-accessory"></i>
+                     </ion-item>
+                 </ion-list>
+             </ion-slide>
+             <ion-slide ion-slide-tab-label="Archives">
+                 <ion-list>
+                     <ion-item class="item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}" >
+                         <img ng-src="{{chat.face}}">
+                         <h2>{{chat.name}}</h2>
+                         <p style="color:#ccc;">{{chat.email}}</p>
+                         <i class="icon ion-chevron-right icon-accessory"></i>
+                     </ion-item>
+                 </ion-list>
+             </ion-slide>
+             <ion-slide ion-slide-tab-label="Outbox">
+                 <ion-list>
+                     <ion-item class="item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}" >
+                         <img ng-src="{{chat.face}}">
+                         <h2>{{chat.name}}</h2>
+                         <p style="color:#ccc;">{{chat.email}}</p>
+                         <i class="icon ion-chevron-right icon-accessory"></i>
+                     </ion-item>
+                 </ion-list>
+             </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,45 @@
+<style type="text/css">
+    .slider-slide-tab  span:last-child{
+        border-radius: 10px;
+        background:#ffffff;
+        padding: 3px 8px;
+        color: #ef473a;
+        position: relative;
+        bottom: 8px;
+        left: 5px;
+        font-weight: bold;
+        box-shadow:0 0 1px #fff;
+    }
+</style>
+<ion-view view-title="Sales">
+    <ion-content scroll="false" overflow-scroll="true">
+        <ion-slide-box slide-tabs-scrollable="true"  show-pager="false" ion-slide-tabs bar-assertive>
+            <ion-slide ion-slide-tab-label="Quotations">
+                <ion-view>
+                    <ion-content>
+                        <p ng-show="sales_quotations.length == 0">No Quotations found</p>
+                        <ion-list>
+                            <ion-item collection-repeat="sale in sales_quotations" ng-click="single_sale(sale.id)" style="border-bottom:1px solid #ccc">
+                                <b>Number: {{sale.name}}<p></p>
+                            </b><small>Customer: {{sale.partner_id[1]}}</small>
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Sale Orders">
+                <ion-view>
+                    <ion-content>
+                        <p ng-show="sales_orders.length == 0">No orders found</p>
+                        <ion-list>
+                            <ion-item collection-repeat="order in sales_orders" ng-click="single_sale(order.id)"style="border-bottom:1px solid #ccc">
+                                <b>Number: {{order.name}}<p></p>
+                                </b><small>Customer: {{order.partner_id[1]}}</small>
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

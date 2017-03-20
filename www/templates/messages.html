@@ -1,0 +1,77 @@
+<style type="text/css">
+    .slider-slide-tab  span:last-child{
+        border-radius: 10px;
+        background:#ffffff;
+        padding: 3px 8px;
+        color: #ef473a;
+        position: relative;
+        bottom: 8px;
+        left: 5px;
+        font-weight: bold;
+        box-shadow:0 0 1px #fff;
+    }
+
+
+</style>
+<ion-view view-title="Messages">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-android-more-vertical"  ng-click="popover.show($event)"></button>
+    </ion-nav-buttons>
+    <ion-content scroll="false" overflow-scroll="true">
+        <ion-slide-box slide-tabs-scrollable="true"  show-pager="false" ion-slide-tabs bar-assertive>
+            <ion-slide ion-slide-tab-label="Inbox">
+                <ion-view>
+                    <ion-content>
+                        <ion-list>
+                         <ion-item collection-repeat="message in messages" ng-click="single_messages(message.id)" style="border-bottom:1px solid #ccc">
+                                 <b>Inbox</b><p></p>
+                                <small>Message here</small>
+                    </ion-list>
+
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <!--<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900" ng-click="add()"><i class="icon ion-plus"></i></button>-->
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="To-me">
+                <ion-view>
+                    <ion-content>
+                        <ion-list>
+                      <ion-item collection-repeat="message in messages" style="border-bottom:1px solid #ccc">
+                            <b>To Me</b>
+                            <small>Message here</small>
+                      </ion-item>
+                    </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="To-Do">
+                 <ion-view>
+                    <ion-content>
+                        <ion-list>
+                      <ion-item collection-repeat="message in messages" style="border-bottom:1px solid #ccc">
+                            
+                            <p>Your Form can be here</p>
+                      </ion-item>
+                    </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Archives">
+                 <ion-view>
+                    <ion-content>
+                        <ion-list>
+                      <ion-item collection-repeat="message in messages" style="border-bottom:1px solid #ccc">
+                            <p>Final form, and do the submit</p>
+                      </ion-item>
+                    </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

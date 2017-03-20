@@ -1,0 +1,20 @@
+<form ng-show="form" >
+    <div class="col-80"style="background:#fff; margin:5% auto 3% auto; height:auto; border-radius:3px;">
+        <div class="list col-80" style="margin:auto; ">
+            <label class="item item-input item-floating-label input-calm">
+                <span class="input-label">Name</span>
+                <input type="text" name="name" ng-model="name" placeholder="First Name">
+
+            </label>
+
+            <label class="item item-input item-floating-label input-calm">
+                <span class="input-label">Tel. Number</span>
+                <input type="tel" name="tel" ng-model="tel" placeholder="Mobile number">
+            </label>
+        </div>
+    </div>
+
+    <div class="list col-80" style="margin:auto; ">
+        <a ng-click="addContact();"  class="button button-full button-assertive ink">Add </a>
+    </div>
+</form>

@@ -1,0 +1,39 @@
+<style type="text/css">
+    .slider-slide-tab  span:last-child{
+        border-radius: 10px;
+        background:#ffffff;
+        padding: 3px 8px;
+        color: #ef473a;
+        position: relative;
+        bottom: 8px;
+        left: 5px;
+        font-weight: bold;
+        box-shadow:0 0 1px #fff;
+    }
+
+
+</style>
+<ion-view view-title="Human Resource">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-android-more-vertical"  ng-click="popover.show($event)"></button>
+    </ion-nav-buttons>
+    <ion-content scroll="false" overflow-scroll="true">
+        <ion-slide-box slide-tabs-scrollable="true"  show-pager="false" ion-slide-tabs bar-assertive>
+            <ion-slide ion-slide-tab-label="Employees">
+                <ion-view>
+                    <ion-content>
+                       Employees
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Expenses">
+                <ion-view>
+                    <ion-content>
+                        Expenses
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

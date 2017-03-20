@@ -1,0 +1,61 @@
+<style>
+    .icon{
+        font-size: 150%;
+    }
+</style>
+<ion-view>
+    <ion-nav-title>{{contact.name}}</ion-nav-title>
+    <ion-content class="padding">
+        <center><img src="img/tyrion.jpg"> <br/></center>
+        <br/>
+        <form>
+            <center><label>Click to Edit: <input type="checkbox" ng-model="checked"></label><br/></center>
+            <div class="col-100"style="background:#fff; margin:1% auto 1% auto; height:auto; border-radius:3px;">
+                <div class="list col-100">
+                    <div class="card">
+                    <div class="list" style="padding: 0%">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label"><i class="icon ion-person"></i> Name</span>
+                            <input type="text" ng-readonly="!checked" value=" {{contact.name}}" ng-model="contact.name">
+                        </label>
+                        <div style="border-bottom:1px solid #ccc"></div>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label"><i class="icon ion-email"></i> E-mail Address</span>
+                            <input type="text" value="{{contact.email}}" ng-model="contact.email" ng-readonly="!checked">
+                        </label>
+
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label"><i class="icon ion-ios-world"></i> Website</span>
+                            <input type="text" value="{{contact.website}}" ng-model="contact.website" ng-readonly="!checked">
+                        </label>
+                        <div style="border-bottom:1px solid #ccc"></div>
+
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label"><i class="icon ion-iphone"></i> Mobile</span>
+                            <input type="text" value="{{contact.mobile}}" ng-model="contact.mobile" ng-readonly="!checked">
+                        </label>
+
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label"><i class="icon ion-ios-telephone"></i> Phone </span>
+                            <input type="text" value="{{contact.phone}}" ng-model="contact.phone" ng-readonly="!checked">
+                        </label>
+                        <div style="border-bottom:1px solid #ccc"></div>
+
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label"><i class="icon ion-ios-location"></i> Address</span>
+                            <input type="text" value="{{contact.zip}}" ng-model="contact.zip" ng-readonly="!checked">
+                            Street:<input type="text" value="{{contact.street}}" ng-model="contact.street" ng-readonly="!checked">
+                           City: <input type="text" value="{{contact.city}}" ng-model="contact.city" ng-readonly="!checked">
+                        </label>
+                        <div style="border-bottom:1px solid #ccc"></div>
+                    </div>
+                    </div>
+                </div>
+                <a ng-click="update_record(contact.id, contact.name, contact.email, contact.website, contact.mobile, contact.phone, contact.zip, contact.street, contact.city)" ng-show="checked" class="button button-full button-assertive ink">Save</a>
+            </div>
+
+    </form>
+
+    </ion-content>
+</ion-view>
+

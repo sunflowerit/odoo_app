@@ -1,0 +1,34 @@
+<ion-view>
+    <ion-nav-title>{{product.name}}</ion-nav-title>
+    <ion-content class="padding">
+        <div class="card">
+        <center><img src="img/bulb.png"> <br/></center>
+        </div>
+        <div class="card">
+            <center><label>Edit Product: <input type="checkbox" ng-model="checked"></label><br/></center>
+    <div class="item>
+        <div class="list list-inset">
+            <label class="item item-input">
+                <span class="input-label"><b>Name:</b></span>
+                <input type="text" value="{{product.name}}" ng-model="product.name" ng-readonly="!checked">
+            </label>
+
+            <label class="item item-input">
+                <span class="input-label"><b>Type:</b></span>
+                <input type="text" value="{{product.type}}" ng-model="product.type" readonly>
+            </label>
+
+            <label class="item item-input">
+                <span class="input-label"><b>Qty Available:</b></span>
+                <input type="text" value="{{product.qty_available}}" ng-model="product.qty_available" ng-readonly="!checked">
+            </label>
+
+            <label class="item item-input">
+                <span class="input-label"><b>List Price: (Ksh.)</b></span>
+                <input type="text" value="{{product.list_price}}" ng-model="product.list_price" ng-readonly="!checked">
+            </label>
+        </div>
+</div>
+        <a ng-click="update(product.id, product.list_price, product.name, product.qty_available)" ng-show="checked" class="button button-full button-assertive ink">Update</a>
+    </ion-content>
+</ion-view>

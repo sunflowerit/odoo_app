@@ -1,0 +1,62 @@
+<style type="text/css">
+    .slider-slide-tab  span:last-child{
+        border-radius: 10px;
+        background:#ffffff;
+        padding: 3px 8px;
+        color: #ef473a;
+        position: relative;
+        bottom: 8px;
+        left: 5px;
+        font-weight: bold;
+        box-shadow:0 0 1px #fff;
+    }
+</style>
+<ion-view view-title="Purchases">
+    <ion-content scroll="false" overflow-scroll="true">
+        <ion-slide-box slide-tabs-scrollable="true"  show-pager="false" ion-slide-tabs bar-assertive>
+            <ion-slide ion-slide-tab-label="Quotations">
+                <ion-view>
+                    <ion-content>
+                        <ion-list>
+                            <p ng-show="quotations.length == 0">No records found</p>
+                            <ion-item collection-repeat="quotation in quotations" style="border-bottom:1px solid #ccc">
+                                <b>{{quotation.name}}:</b> <small>{{quotation.partner_id[1]}}</small><p></p>
+                                <small>Ksh. {{quotation.amount_total}}</small><p></p>
+                                <small>{{quotation.state}}</small>
+
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Orders">
+                <ion-view>
+                    <ion-content>
+                        <p ng-show="purchase_orders.length == 0">No records found</p>
+                        <ion-list>
+                            <ion-item collection-repeat="purchase in purchase_orders" style="border-bottom:1px solid #ccc">
+                                <b>{{purchase.name}}:</b> <small>{{purchase.partner_id[1]}}</small><p></p>
+                                <small>Ksh. {{purchase.amount_total}}</small><p></p>
+                                <small>{{purchase.state}}</small>
+
+                            </ion-item>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Products">
+                <ion-view>
+                    <ion-content>
+                        <p ng-show="incoming_products.length == 0">No records found</p>
+                        <ion-list>
+                            <ion-item collection-repeat="product in incoming_products" style="border-bottom:1px solid #ccc">
+                                <b>{{product.origin}}</b><p></p>
+                                <small>{{product.name}}</small><p></p>
+                                <small>Qty: {{product.product_qty}}</small>
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

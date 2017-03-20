@@ -1,0 +1,24 @@
+<ion-view>
+    <ion-nav-title>Quotation Number: {{account.internal_number}}</ion-nav-title>
+    <ion-content class="padding">
+        <div class="card">
+            <div class="item item-divider" style="border-bottom:1px solid #ccc">
+                <div style="text-align: center"> Invoice Date: {{account.date_invoice}}</div>
+            </div>
+            <div class="list card">
+
+                <ul class="list list-inset">
+                    <li class="item" style="border-bottom:1px solid #ccc"><b>Customer: </b>{{account.partner_id[1]}}</li>
+                    <li class="item" style="border-bottom:1px solid #ccc"><b>Responsible: </b>{{account.user_id[1]}}</li>
+                    <li class="item"style="border-bottom:1px solid #ccc"><b>Balance: </b>Ksh. {{account.residual}}</li>
+                    <li class="item"style="border-bottom:1px solid #ccc"><b>Total: </b>Ksh. {{account.amount_total}}</li>
+                    <li class="item"style="border-bottom:1px solid #ccc"><b>Status: </b>{{account.state}}</li>
+                </ul>
+
+            </div>
+            <div class="item item-divider">
+                <div style="text-align:center">Due Date: {{account.date_due}} <div>
+                </div>
+                </div>
+    </ion-content>
+</ion-view>

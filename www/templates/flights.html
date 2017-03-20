@@ -1,0 +1,70 @@
+<style type="text/css">
+    .slider-slide-tab  span:last-child{
+        border-radius: 10px;
+        background:#ffffff;
+        padding: 3px 8px;
+        color: #ef473a;
+        position: relative;
+        bottom: 8px;
+        left: 5px;
+        font-weight: bold;
+        box-shadow:0 0 1px #fff;
+    }
+</style>
+<ion-view view-title="Flights">
+    <ion-content scroll="false" overflow-scroll="true">
+        <ion-slide-box slide-tabs-scrollable="true">
+            <ion-slide ion-slide-tab-label="Reservations">
+                <ion-list>
+                    <ion-item   nav-clear menu-close>
+
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Flight Date</th>
+                                <th>Duration</th>
+                                <th>Aircraft</th>
+                                <th>Customer</th>
+                                <th>Route</th>
+                                <th>State</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="reservation in reservations">
+                                <td><input type="checkbox" value="true"></td>
+                                <td>{{reservation.date_planned}}</td>
+                                <td>{{reservation.duration}} hrs</td>
+                                <td>{{reservation.aircraft_id[1]}}</td>
+                                <td>{{reservation.partner_id[1]}}</td>
+                                <td>{{reservation.route}}</td>
+                                <td>{{reservation.state}}</td>
+                                <!--<td>14-09-2016</td>
+                                <td>5 hrs</td>
+                                <td>5K-215J</td>
+                                <td>Danco</td>
+                                <td>Kisumu Nairobi</td>
+                                <td>Invoiced</td>-->
+                            </tr>
+                            </tbody>
+                        </table>
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Calendar">
+                <ion-list>
+                    <ion-item>
+                        Calendar
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Aircraft">
+                <ion-list>
+                    <ion-item>
+                        Aircraft
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

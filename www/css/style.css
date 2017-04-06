@@ -176,11 +176,14 @@ p {
     box-shadow: 0 0 0 0 rgba(0,0,0,.0) !important;
 }
 .assertive-900-bg, .assertive-900-bg.activated, .assertive-900-bg:active, .assertive-900-bg:hover, .assertive-900-border, .assertive-900-border.activated, .assertive-900-border:active, .assertive-900-border:hover, .bar .button-assertive-900, .bar .button-assertive-900.activated, .bar .button-assertive-900:active, .bar .button-assertive-900:hover, .bar-assertive-900, .bar-assertive-900.activated, .bar-assertive-900:active, .bar-assertive-900:hover, .button-assertive-900, .button-assertive-900.activated, .button-assertive-900:active, .button-assertive-900:hover, .button-bar-assertive-900, .button-bar-assertive-900.activated, .button-bar-assertive-900:active, .button-bar-assertive-900:hover, .header-assertive-900, .header-assertive-900.activated, .header-assertive-900:active, .header-assertive-900:hover{
-  background: #393596 !important;
+  background: #ed2125 !important;
 }
 
 .button-assertive{
-  background: #393596 !important;
+  background: #ed2125 !important;
+}
+.bar-assertive{
+   background: #ed2125 !important;
 }
 .table .title{
     width: 20%;

@@ -39,7 +39,7 @@
                         <ion-list>
                         <p ng-show="contacts.length == 0">No records found</p>
                             <!--<ion-item ng-repeat="contact in contacts" class="item-avatar" ng-click="single_contact(contact.id)">-->
-                        <ion-item auto-list-divider auto-list-divider-value="{{contact.name}}" class="item-avatar" ng-repeat="contact in contacts | orderBy:'name' |filter:search" ng-click="single_contact(contact.id)" style="border-bottom:1px solid #ccc">
+                        <ion-item auto-list-divider auto-list-divider-value="{{contact.name}}" class="item-avatar" ng-repeat="contact in contacts | orderBy:'name' |filter:search track by $index" ng-click="single_contact(contact.id)" style="border-bottom:1px solid #ccc">
                             <img src="img/tyrion.jpg" />
                             <p><b>{{contact.name}}</b></p>
                             <small>{{contact.email}}</small>
@@ -61,7 +61,7 @@
                             <p ng-show="customers.length == 0">No records found</p>
                         <ion-list>
 
-                        <ion-item collection-repeat="customer in customers |filter:search" ng-click="single_contact(customer.id)">
+                        <ion-item collection-repeat="customer in customers |filter:search" ng-click="single_contact(customer.id)" style="border-bottom:1px solid #ccc">
                             <b>{{customer.name}}</b>
                             <p>{{customer.mobile}}</p>
                             <small>{{customer.email}}</small>

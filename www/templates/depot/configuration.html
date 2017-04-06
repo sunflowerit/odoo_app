@@ -1,0 +1,87 @@
+<style type="text/css">
+    .slider-slide-tab  span:last-child{
+        border-radius: 10px;
+        background:#ffffff;
+        padding: 3px 8px;
+        color: #ef473a;
+        position: relative;
+        bottom: 8px;
+        left: 5px;
+        font-weight: bold;
+        box-shadow:0 0 1px #fff;
+    }
+
+
+</style>
+<ion-view view-title="Configuration">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-android-more-vertical"  ng-click="popover.show($event)"></button>
+    </ion-nav-buttons>
+    <ion-content scroll="false" overflow-scroll="true">
+        <ion-slide-box slide-tabs-scrollable="true"  show-pager="false" ion-slide-tabs bar-assertive>
+            <ion-slide ion-slide-tab-label="Warehouses">
+                <ion-view>
+                    <ion-content>
+                        <p ng-show="warehouses.length == 0">No records found</p>
+                        <ion-list>
+                            <ion-item ng-repeat="warehouse in warehouses track by $index" style="border-bottom: 1px solid #ccc">
+                                <p><b>Warehouse Code: {{warehouse.code}}</b></p>
+                                <small><b>Warehouse Name:</b> {{warehouse.name}}</small></p>
+                                <small><b>Address:</b> {{warehouse.partner_id[2]}}</small></P>
+
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Routes">
+                <ion-view>
+                    <ion-content>
+                        <p ng-show="warehouses.length == 0">No routes found</p>
+                        <ion-list>
+                            <ion-item ng-repeat="route in routes track by $index" style="border-bottom: 1px solid #ccc">
+                                <p><b>Date: {{route.create_date}}</b></p>
+                                <small><b>Route:</b> {{route.name}}</small></p>
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Locations">
+                <ion-view>
+                    <ion-content>
+                        <p ng-show="warehouses.length == 0">No records found</p>
+                        <ion-list>
+                            <ion-item ng-repeat="location in locations track by $index" style="border-bottom: 1px solid #ccc">
+                                <p><b>Location Name: {{location.name}}</b></p>
+                                <small><b>Location type:</b> {{location.usage}}</small></p>
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="UoM">
+                <ion-view>
+                    <ion-content>
+                        <p ng-show="warehouses.length == 0">No records found</p>
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><b>Unit of Measure</b></th>
+                                <th><b>Category</b></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="uom in uoms track by $index">
+                                <td>{{uom.name}}</td>
+                                <td>{{uom.category_id[1]}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

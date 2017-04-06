@@ -1,0 +1,37 @@
+<style type="text/css">
+    .slider-slide-tab  span:last-child{
+        border-radius: 10px;
+        background:#ffffff;
+        padding: 3px 8px;
+        color: #ef473a;
+        position: relative;
+        bottom: 8px;
+        left: 5px;
+        font-weight: bold;
+        box-shadow:0 0 1px #fff;
+    }
+
+
+</style>
+<ion-view view-title="Projects">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-android-more-vertical"  ng-click="popover.show($event)"></button>
+    </ion-nav-buttons>
+    <ion-content scroll="false" overflow-scroll="true">
+        <ion-slide-box slide-tabs-scrollable="true"  show-pager="false" ion-slide-tabs bar-assertive>
+            <ion-slide ion-slide-tab-label="Projects">
+                <ion-view>
+                    <ion-content>
+                       Projects
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Tasks">
+                <ion-view>
+                    <ion-content>
+                        Tasks
+                    </ion-content>
+                </ion-view>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

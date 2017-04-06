@@ -17,8 +17,8 @@
             <ion-slide ion-slide-tab-label="Quotations">
                 <ion-view>
                     <ion-content>
+                        <p ng-show="quotations.length == 0">No records found</p>
                         <ion-list>
-                            <p ng-show="quotations.length == 0">No records found</p>
                             <ion-item collection-repeat="quotation in quotations" style="border-bottom:1px solid #ccc">
                                 <b>{{quotation.name}}:</b> <small>{{quotation.partner_id[1]}}</small><p></p>
                                 <small>Ksh. {{quotation.amount_total}}</small><p></p>

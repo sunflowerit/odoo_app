@@ -1,0 +1,57 @@
+<style type="text/css">
+    .slider-slide-tab  span:last-child{
+        border-radius: 10px;
+        background:#ffffff;
+        padding: 3px 8px;
+        color: #ef473a;
+        position: relative;
+        bottom: 8px;
+        left: 5px;
+        font-weight: bold;
+        box-shadow:0 0 1px #fff;
+    }
+
+
+</style>
+<ion-view view-title="Traceability">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-android-more-vertical"  ng-click="popover.show($event)"></button>
+    </ion-nav-buttons>
+    <ion-content scroll="false" overflow-scroll="true">
+        <ion-slide-box slide-tabs-scrollable="true"  show-pager="false" ion-slide-tabs bar-assertive>
+            <ion-slide ion-slide-tab-label="Stock Moves">
+                <ion-view>
+                    <ion-content>
+                        <p ng-show="stock_moves.length == 0">No records found</p>
+                        <ion-list>
+                            <ion-item ng-repeat="stock in stock_moves track by $index" style="border-bottom: 1px solid #ccc">
+                                <p><b>Reference: {{stock.picking_id[1]}}</b></p>
+                                <small><b>Date:</b> {{stock.date}}</small></p>
+                                <small><b>Product:</b> {{stock.product_id[1]}}</small></P>
+                                <small><b>Quantity:</b> {{stock.product_qty}}</small>
+
+
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+
+            <ion-slide ion-slide-tab-label="Procurements">
+                <ion-view>
+                    <ion-content>
+                        <p ng-show="procurements.length == 0">No records found</p>
+                        <ion-list>
+                            <ion-item ng-repeat="procurement in procurements track by $index" style="border-bottom: 1px solid #ccc">
+                                <p><b>Source Document: {{procurement.origin}}</b></p>
+                                <small><b>Product:</b> {{procurement.name}}</small></p>
+                                <small><b>Quantity:</b> {{procurement.product_qty}}</small>
+
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

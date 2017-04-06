@@ -22,14 +22,31 @@
             <ion-slide ion-slide-tab-label="Employees">
                 <ion-view>
                     <ion-content>
-                       Employees
+                        <ion-list>
+                            <p ng-show="employees.length == 0">No records found</p>
+                            <!--<ion-item ng-repeat="contact in contacts" class="item-avatar" ng-click="single_contact(contact.id)">-->
+                            <ion-item auto-list-divider auto-list-divider-value="{{employee.name}}" class="item-avatar" ng-repeat="employee in employees | orderBy:'name'" style="border-bottom:1px solid #ccc">
+                                <img src="img/tyrion.jpg" />
+                                <p><b>{{employee.name}}</b></p>
+                                <small>{{employee.work_email}}</small>
+
+                            </ion-item>
+                        </ion-list>
                     </ion-content>
                 </ion-view>
             </ion-slide>
             <ion-slide ion-slide-tab-label="Expenses">
                 <ion-view>
                     <ion-content>
-                        Expenses
+                        <p ng-show="expenses.length == 0">No records found</p>
+                        <ion-list>
+                            <ion-item ng-repeat="expense in expenses track by $index" style="border-bottom: 1px solid #ccc">
+                               <p><b>Employee: {{expense.employee_id[1]}}</b></p>
+                                <small><b>Date:</b> {{expense.date}}</small></p>
+                                <small><b>Description:</b> {{expense.name}}</small>
+
+                            </ion-item>
+                        </ion-list>
                     </ion-content>
                 </ion-view>
             </ion-slide>

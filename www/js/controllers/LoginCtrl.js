@@ -14,16 +14,16 @@ app.controller('LoginCtrl', [
       $scope.password = 'admin';
 
 // on click of connect button, connect to server
-    $scope.connect = function(username, password) {
+    $scope.connect = function(database, username, password) {
         $scope.host = "http://o.websandbox.nl";
-        $scope.database = 'daimond_lighting';
-        $scope.username = 'admin';
-        $scope.password = 'admin';
+        //$scope.database = 'daimond_lighting';
+       //$scope.username = 'admin';
+        //$scope.password = 'admin';
       console.log(username);
         console.log(password);
       jsonRpc.odoo_server = $scope.host;
 
-      jsonRpc.login($scope.database, username, password)
+      jsonRpc.login(database, username, password)
       //.then((response) => {
 
 
@@ -47,8 +47,6 @@ app.controller('LoginCtrl', [
                   showBackdrop: true,
                   maxWidth: 400,
                   showDelay: 0
-              }).then(function () {
-                  console.log("The loading indicator is now displayed");
               })
             console.log(response.records);
            //},(response) => {

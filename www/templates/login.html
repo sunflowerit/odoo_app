@@ -22,7 +22,7 @@
         <div class="hero slide-up " >
             <div class="content">
                 <div class="avatar" style="background-image: url('img/logo.jpg');"></div>
-                <h3><a class="light">Diamond Lighting</a></h3>
+                <h3><a class="light">Flamex Petroleum</a></h3>
                 <p></p>
 
             </div>
@@ -38,14 +38,14 @@
            <div class="list col-80" style="margin:auto; ">
 
             <p style="margin-top:10px; color:#c00;">{{loginErrorText}}</p>
-            <!--<label class="item item-input item-floating-label input-calm">     
-                <span class="input-label">Host</span>
-                <input type="text" name="host" ng-model="host" placeholder="Email Address">
+            <label class="item item-input item-floating-label input-calm">
+                <span class="input-label"><b>Host</b></span>
+                <input type="text" name="host" ng-model="host" placeholder="Host ">
             </label>
             <label class="item item-input item-floating-label input-calm">     
-                <span class="input-label">database</span>
-                <input type="text" name="database" ng-model="database" placeholder="Email Address">
-            </label>-->
+                <span class="input-label"><b>Database</b></span>
+                <input type="text" name="database" ng-model="database" placeholder="Database name">
+            </label>
             <label class="item item-input item-floating-label input-calm">     
                 <span class="input-label"><b>Username</b></span>
                 <input type="text" name="username" ng-model="username" placeholder="Email Address">
@@ -58,7 +58,7 @@
         </div>
 
         <div class="list col-75" style="margin:auto; "> 
-            <a ng-click="connect(username, password)" class="button button-full button-assertive ink">Login </a>
+            <a ng-click="connect(database, username, password)" class="button button-full button-assertive ink">Login </a>
         </form>
             <a href="#app/recover_password" style="color:#fff; text-decoration:none; float:left;">Forgot Password?</a>
             <!--<a href="#app/signup" style="color:#fff; text-decoration:none; float:right;">Sign Up</a>-->

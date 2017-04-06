@@ -16,32 +16,67 @@ app.controller('AppCtrl', function($scope, $rootScope,  $http, $ionicModal, $ion
             this.classList.toggle('active');
         });
     }
+    //Expanding Menus
 
-    if($state.current.name == app.messages){
-        console.log('messages');
-    }else{
-        console.log('Somewhere else');
-    }
-    console.log('messages');
+        $scope.theme = 'ionic-sidemenu-red';
 
-   /* var messages = '<ion-popover-view>' +
-        '   <ion-content class="padding">' +
-        '       <li>'+test+ '</li>' +
-        '       <li>About</li>' +
-        '       <li>Logout</li>' +
-        '   </ion-content>' +
-        '</ion-popover-view>';
+        $scope.tree =
+            [{
+                id: 1,
+                level: 0,
+                name: 'Depot',
+                icon: "icon ion-ios-briefcase",
+                items: [{
+                    id: 10,
+                    level: 1,
+                    name: 'Inventory Control',
+                    icon: "ion-funnel",
+                    state: 'app.inventory_control',
+                    items: null
+                }, {
+                    id: 11,
+                    level: 1,
+                    name: 'Traceability',
+                    icon: "ion-clock",
+                    state:'app.traceability',
+                    items: null
+                }, {
+                    id: 12,
+                    level: 1,
+                    name: 'Configuration',
+                    icon: "ion-gear-b",
+                    state:'app.configuration',
+                    items: null
+                }]
+            }, {
+                id: 2,
+                name: "Project",
+                icon: "ion-calendar",
+                level: 0,
+                state: 'app.project'
+            }];
 
-    $scope.popover = $ionicPopover.fromTemplate(messages, {
-        scope: $scope
-    });
-    $scope.closePopover = function () {
-        $scope.popover.hide();
-    };
-    //Cleanup the popover when we're done with it!
-    $scope.$on('$destroy', function () {
-        $scope.popover.remove();
-    });*/
+
+
+
+    /* var messages = '<ion-popover-view>' +
+         '   <ion-content class="padding">' +
+         '       <li>'+test+ '</li>' +
+         '       <li>About</li>' +
+         '       <li>Logout</li>' +
+         '   </ion-content>' +
+         '</ion-popover-view>';
+
+     $scope.popover = $ionicPopover.fromTemplate(messages, {
+         scope: $scope
+     });
+     $scope.closePopover = function () {
+         $scope.popover.hide();
+     };
+     //Cleanup the popover when we're done with it!
+     $scope.$on('$destroy', function () {
+         $scope.popover.remove();
+     });*/
 
     ////////////////////////////////////////
     // Layout Methods

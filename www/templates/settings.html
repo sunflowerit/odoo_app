@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+</head>
+
+<ion-view view-title="Settings">
+<ion-content overflow-scroll="true">
+
+    <div class="list">
+        <div class="item item-divider" style="border-bottom: 1px solid #ccc">
+            Modules
+        </div>
+
+        <ion-toggle ng-repeat="item in settingsList"
+                    ng-model="item.checked"
+                    ng-checked="item.checked" style="border-bottom: 1px solid #ccc; height: 15px !important;">
+            <i class="icon {{item.icon}}"> </i>  {{ item.text }}
+        </ion-toggle>
+        <div class="item item-divider" style="border-bottom: 1px solid #ccc">
+            Notifications
+        </div>
+
+        <ion-toggle ng-model="pushNotification.checked"
+                    ng-change="pushNotificationChange()" style="height: 15px !important;">
+            Push Notifications
+        </ion-toggle>
+    </div>
+
+
+    <div class="item item-divider">
+            App Preferences
+        </div>
+        <div class="item item-divider">
+            Updates
+        </div>
+    </div>
+    </ion-content>
+    </ion-view>

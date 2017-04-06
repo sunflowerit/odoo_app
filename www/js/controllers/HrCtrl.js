@@ -9,36 +9,36 @@ app.controller('HrCtrl', [
 
         $scope.host = "http://o.websandbox.nl";
         $scope.employees = [];
-        $scope.departments = [];
+        $scope.expenses = [];
 
 
         $scope.allemployees = function (){
             jsonRpc.odoo_server = $scope.host;
-            $scope.model = 'hr.employees';
+            $scope.model = 'hr.employee';
             $scope.domain = [];
-            $scope.fields = ['name','type','image'];
+            $scope.fields = ['name','type','image', 'mobile_phone', 'work_email'];
 
             jsonRpc.searchRead($scope.model, $scope.domain, $scope.fields)
                 .then(function(response) {
-                    console.log(response.records);
+
 
                     angular.forEach(response.records, function(child){
-                        //console.log(child.id);
+
                         $scope.employees.push(child);
                     });
-                    console.log($scope.customers);
+
                 }),function(response){
-                console.log(response);
+
             }
         }
         $scope.allemployees();
 
-        $scope.alldepartments = function (){
+        $scope.allexpenses = function (){
             console.log('working');
             jsonRpc.odoo_server = $scope.host;
-            $scope.model = 'product.template';
-            $scope.domain = [['type', '=', 'service']];
-            $scope.fields = ['name'];
+            $scope.model = 'hr.expense.expense';
+            $scope.domain = [];
+            $scope.fields = ['name', 'employee_id', 'date', 'amount', 'state'];
 
             jsonRpc.searchRead($scope.model, $scope.domain, $scope.fields)
                 .then(function(response) {
@@ -46,14 +46,14 @@ app.controller('HrCtrl', [
 
                     angular.forEach(response.records, function(child){
                         //console.log(child.id);
-                        $scope.products_service.push(child);
+                        $scope.expenses.push(child);
                     });
                     console.log($scope.customers);
                 }),function(response){
                 console.log(response);
             }
         }
-        $scope.alldepartments();
+        $scope.allexpenses();
 
 
         $scope.add= function () {

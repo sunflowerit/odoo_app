@@ -1,6 +1,6 @@
 // QuickPay Starter App
 
-var app = angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'ngCookies', 'odoo', 'ionic-material', 'ionic.ion.autoListDivider', 'ionMdInput', 'satellizer'])
+var app = angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'ngCookies', 'odoo', 'ionic-material', 'ionic.ion.autoListDivider',  'ionic-sidemenu', 'ionMdInput', 'satellizer'])
 
 app.run(function($ionicPlatform , $ionicPopup) {
     $ionicPlatform.ready(function() {
@@ -30,6 +30,8 @@ app.run(function($ionicPlatform , $ionicPopup) {
         }
     });
 })
+
+
 
 app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $httpProvider) {
 
@@ -148,6 +150,66 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
             }
         })
 
+        .state('app.inventory_control', {
+            url:'/inventory_control',
+            views:{
+                'menuContent':{
+                    templateUrl:'templates/depot/inventory_control.html',
+                    controller: 'InventoryControlCtrl'
+                }
+            }
+        })
+
+        .state('app.configuration', {
+            url:'/configuration',
+            views:{
+                'menuContent':{
+                    templateUrl:'templates/depot/configuration.html',
+                    controller: 'ConfigurationCtrl'
+                }
+            }
+        })
+
+        .state('app.traceability', {
+            url:'/traceability',
+            views:{
+                'menuContent':{
+                    templateUrl:'templates/depot/traceability.html',
+                    controller: 'TraceabilityCtrl'
+                }
+            }
+        })
+
+        .state('app.project', {
+            url:'/project',
+            views:{
+                'menuContent':{
+                    templateUrl:'templates/project.html',
+                    controller: 'ProjectCtrl'
+                }
+            }
+        })
+
+        .state('app.settings', {
+            url:'/settings',
+            views:{
+                'menuContent':{
+                    templateUrl:'templates/settings.html',
+                    controller: 'SettingsCtrl'
+                }
+            }
+        })
+
+        .state('app.about', {
+            url:'/about',
+            views:{
+                'menuContent':{
+                    templateUrl:'templates/about.html',
+                    controller: 'AboutCtrl'
+                }
+            }
+        })
+
         .state('app.contacts_single', {
         url: '/contacts/:ContactId',
         views: {
@@ -189,6 +251,6 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
         })
 
     // if none of the above states are matched, use this as the fallback
-   //$urlRouterProvider.otherwise('/app/accounting');
+   //$urlRouterProvider.otherwise('/app/hr');
    $urlRouterProvider.otherwise('/app/login');
-});
+})

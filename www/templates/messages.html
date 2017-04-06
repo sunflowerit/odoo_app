@@ -24,8 +24,8 @@
                     <ion-content>
                         <ion-list>
                          <ion-item collection-repeat="message in messages" ng-click="single_messages(message.id)" style="border-bottom:1px solid #ccc">
-                                 <b>Inbox</b><p></p>
-                                <small>Message here</small>
+                                 <b>{{message.name}}</b><p></p>
+                                <small>{{message.email}}</small>
                     </ion-list>
 
                         <br/>
@@ -41,8 +41,9 @@
                     <ion-content>
                         <ion-list>
                       <ion-item collection-repeat="message in messages" style="border-bottom:1px solid #ccc">
-                            <b>To Me</b>
-                            <small>Message here</small>
+                            <b>{{message.name}}</b>
+                            <p>{{message.msg}}</p>
+                            <small>{{message.email}}</small>
                       </ion-item>
                     </ion-list>
                     </ion-content>
@@ -53,8 +54,9 @@
                     <ion-content>
                         <ion-list>
                       <ion-item collection-repeat="message in messages" style="border-bottom:1px solid #ccc">
-                            
-                            <p>Your Form can be here</p>
+                            <b>{{message.name}}</b>
+                            <p>{{message.msg}}</p>
+                            <small>{{message.email}}</small>
                       </ion-item>
                     </ion-list>
                     </ion-content>
@@ -65,7 +67,9 @@
                     <ion-content>
                         <ion-list>
                       <ion-item collection-repeat="message in messages" style="border-bottom:1px solid #ccc">
-                            <p>Final form, and do the submit</p>
+                            <b>{{message.name}}</b>
+                            <p>{{message.msg}}</p>
+                            <small>{{message.email}}</small>
                       </ion-item>
                     </ion-list>
                     </ion-content>

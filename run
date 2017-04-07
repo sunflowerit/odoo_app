@@ -1,0 +1,2 @@
+echo HOST TO CLICK http://localhost:8100
+ionic serve -lab
